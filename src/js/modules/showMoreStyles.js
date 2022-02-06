@@ -49,7 +49,7 @@ const showMoreStyles = (trigger, wrapper) => {
             let card = document.createElement('div');
 
             card.classList.add('animated', 'fadeInUp', 'animated', 'fadeInUp', 'col-sm-3', 'col-sm-offset-0', 'col-xs-10', 'col-xs-offset-1');
-
+            
             card.innerHTML = `
                 <div class="styles-block">
                     <img src="assets/img/fail.png" alt>

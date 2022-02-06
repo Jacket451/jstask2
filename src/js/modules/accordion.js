@@ -12,8 +12,7 @@ const accordion = (triggersSelector) => {
             } else {
                 this.nextElementSibling.style.maxHeight = '0px';
             }
-            
-            
+          
         });
     });
     
