@@ -72,6 +72,7 @@ const filter = () => {
             target.classList.add('active');
         }
     });
+    
 };
 
 export default filter;

@@ -1,20 +1,29 @@
 const drop = () => {
+    // drag *
+    // dragend *
+    // dragenter - объект над dropArea
+    // dragexit *
+    // dragleave - объект за пределами dropArea
+    // dragover - объект зависает над dropArea
+    // dragstart *
+    // drop - объект отправлен в dropArea
+    
     const fileInputs = document.querySelectorAll('[name="upload"]');
 
-    ['dragenter', 'dragenter', 'dragover', 'drop'].forEach(eventName => {
+    ['dragenter', 'dragleave', 'dragover', 'drop'].forEach(eventName => {
         fileInputs.forEach(input => {
-            input.addEventListener(eventName, preventDefault, false);
+            input.addEventListener(eventName, preventDefaults, false);
         });
     });
 
-    function preventDefault(e) {
+    function preventDefaults(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 
     function highlight(item) {
         item.closest('.file_upload').style.border = "5px solid yellow";
-        item.closest('.file_upload').style.backgroundColor = "rgba(0, 0, 0, .7)";
+        item.closest('.file_upload').style.backgroundColor = "rgba(0,0,0, .7)";
     }
 
     function unhighlight(item) {
@@ -24,7 +33,6 @@ const drop = () => {
         } else {
             item.closest('.file_upload').style.backgroundColor = "#ededed";
         }
-        
     }
 
     ['dragenter', 'dragover'].forEach(eventName => {
@@ -51,12 +59,5 @@ const drop = () => {
         });
     });
 };
-    // drag*;
-    // dragend*;
-    // dragenter - объект над dropArea;
-    // dragexit*;
-    // dragleave - объект за пределами dropArea;
-    // dragover - объект зависает над dropArea;
-    // dragstart*(срабатывают на элементе, которые мы перетаскиваем DOM);
-    // drop - объект отправлен в dropArea
+
 export default drop;
